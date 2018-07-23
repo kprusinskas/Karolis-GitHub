@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Mitr");
+
 .Logo {
   width: 100px;
 }
@@ -58,6 +60,13 @@
   grid-template-columns: repeat(auto-fill, 6);
   grid-template-rows: repeat(auto-fill, 3);
   grid-gap: 10px;
+
+  /* text style */
+  color: Black;
+  font-family: Mitr;
+  text-transform: uppercase;
+  text-align: center;
+
 }
 
 .item1 {
@@ -66,11 +75,13 @@
   grid-row: 1/2;
   /*visual style*/
   background-image: url("../img/img1.jpg");
-  background-position: center;
   background-size: cover;
+  background-position: center;
   border-radius: 20px;
   /*background: SteelBlue;*/
-  height: 600px;
+  height: 800px;
+  margin: 10px 5px;
+
 }
 
 .item2 {
@@ -84,7 +95,8 @@
   background-size: cover;
   border-radius: 20px;
 
-  height: 600px;
+  height: 800px;
+  margin: 10px 5px;
 }
 
 .item3 {
@@ -98,7 +110,15 @@
   background-size: cover;
   border-radius: 20px;
 
-  height: 600px;
+  height: 800px;
+  margin: 10px 5px;
+}
+
+.item-sub {
+  margin: 0px;
+  padding: 1px 0px 200px 0px;
+  background: linear-gradient( rgba(255,255,255, .6), rgba(255,255,255, .8), rgba(255,255,255, .4), rgba(255,255,255,0));
+  border-radius: 20px 20px 0 0;
 }
 
 .img1 {
@@ -141,7 +161,6 @@
     grid-row: auto;
   }
   .item2 {
-    /*background: Red;*/
     grid-column: 3/5;
     grid-row: auto;
   }
