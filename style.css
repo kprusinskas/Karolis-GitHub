@@ -65,8 +65,11 @@
   grid-column: auto;
   grid-row: 1/2;
   /*visual style*/
-  background-image: url("img/img.jpg");
-  background: SteelBlue;
+  background-image: url(../img/img1.jpg);
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+  /*background: SteelBlue;*/
   height: 400px;
 }
 
@@ -75,17 +78,40 @@
   grid-column: auto;
   grid-row: 2/3;
   /*visual style*/
-  background: Tomato;
+  background-image: url(../img/img2.jpg);
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+  /*background: Tomato;*/
   height: 400px;
-} 
+}
 
 .item3 {
   grid-area: item3;
   grid-column: auto;
   grid-row: 3/4;
   /*visual style*/
-  background: Moccasin;
+  background-image: url(../img/img3.jpg);
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+  /*background: Moccasin;*/
   height: 400px;
+}
+
+.img1 {
+  width: 30vh;
+  align-self: center;
+}
+
+.img2 {
+  width: 30vh;
+  align-self: center;
+}
+
+.img3 {
+  width: 30vh;
+  align-self: center;
 }
 
 /* Ekranas horizontaleje 600-900px */
@@ -96,7 +122,6 @@
     grid-row: 1/2;
   }
   .item2 {
-    background: Green;
     grid-column: 3/5;
     grid-row: 1/2;
   }
@@ -114,7 +139,7 @@
     grid-row: auto;
   }
   .item2 {
-    background: Red;
+    /*background: Red;*/
     grid-column: 3/5;
     grid-row: auto;
   }
