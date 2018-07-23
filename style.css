@@ -65,12 +65,12 @@
   grid-column: auto;
   grid-row: 1/2;
   /*visual style*/
-  background-image: url(../img/img1.jpg);
+  background-image: url("../img/img1.jpg");
   background-position: center;
   background-size: cover;
   border-radius: 20px;
   /*background: SteelBlue;*/
-  height: 400px;
+  height: 600px;
 }
 
 .item2 {
@@ -78,12 +78,13 @@
   grid-column: auto;
   grid-row: 2/3;
   /*visual style*/
+  background: Tomato;
   background-image: url(../img/img2.jpg);
   background-position: center;
   background-size: cover;
   border-radius: 20px;
-  /*background: Tomato;*/
-  height: 400px;
+
+  height: 600px;
 }
 
 .item3 {
@@ -91,12 +92,13 @@
   grid-column: auto;
   grid-row: 3/4;
   /*visual style*/
+  background: Moccasin;
   background-image: url(../img/img3.jpg);
   background-position: center;
   background-size: cover;
   border-radius: 20px;
-  background: Moccasin;
-  height: 400px;
+
+  height: 600px;
 }
 
 .img1 {
