@@ -1,171 +1,165 @@
-@import url("https://fonts.googleapis.com/css?family=Mitr");
+/*  Spalvos  */
 
-.Logo {
-  width: 100px;
+:root {
+    --green-1: #6a6c3f;
+    --green-2: #868b69;
+    --green-3: #bbbd91;
+    --brown-1: #59524b;
+    --brown-2: #8d8075;
+    --brown-3: #dbcdc3;
+    --dark: #1b1a1a;
 }
 
-.body {
-  max-width: 1600px;
-  background: LightGrey;
-  margin: 0px;
-  padding: 0px;
+/*box sizing*/
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-.container {
-  max-width: 1200px;
-  height: 100vh;
-  margin: 0 auto;
-  display: grid;
-  background: LightSkyBlue;
-  grid-gap: 10px;
-  grid-template-areas:
-    "header"
-    "navbar"
-    "content"
-    "offers"
-    "sidebar"
-    "footer";
-}
-
-.header {
-  background: LightSalmon;
-  grid-area: header;
-}
-
-.navbar {
-  background: PaleTurquoise;
-  grid-area: navbar;
+.body{
+  background-color: var(--green-2);
+  margin: 0;
 }
 
 .content {
-  background: LightPink;
-  grid-area: content;
-}
-
-.sidebar {
-  background: PaleGreen;
-  grid-area: sidebar;
-}
-
-.footer {
-  background: DarkGreen;
-  grid-area: footer;
-}
-
-.offers {
-  grid-area: offers;
-  background: Gold;
+  height: 200vh;
+  background-image: url(//unsplash.it/1000/1000);
+  background-color: #333;
+  background-blend-mode: multiply;
+  background-size: cover;
   display: grid;
-  /*grid-template-columns: repeat( auto-fill, minmax(360px, 6fr));*/
-  grid-template-columns: repeat(auto-fill, 6);
-  grid-template-rows: repeat(auto-fill, 3);
-  grid-gap: 10px;
+}
 
-  /* text style */
-  color: Black;
-  font-family: Mitr;
+/* Headerio Navigacijos Stilius */
+
+.header {
+  background: var(--brown-1);
+  color: var(--brown-3);
+  text-align: center; /* centruoja teksta horizontaleje */
+  position: fixed;
+  z-index: 10; /* iskelia sluoksni i prieki */
+  width: 100%;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  /* border: 1px solid red; */
+  display: flex; /* sukuria flex */
+  height: 100%;
+  align-items: center; /* sulygina vertikaleje naudoajnt flex */
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: var(--brown-3);
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative; /* just for span */
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: ''; /* if you don't have this, it defaults to 'none' and nothing ever shows up */
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+.nav {
+  background: var(--brown-1);
+  position: absolute;
+  text-align: left; /* sulygiuoja teksta i kaire */
+  top: 100%;
+  left: 0;
+  width: 100%;
+  /*display: none; /* paslepia */
+  transform: scale(1, 0); /* Animacijai 01: suspaudzia horizontaleje */
+  transform-origin: top; /* Animacijai 04: Padaro, kad prasidetu nuo virsaus */
+  transition: transform 400ms ease-in-out; /* Animacijai 03: transition */
+}
+
+.nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav li {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none; /* nuo hyperlinko nuima underline */
+  font-size: 1.2rem;
   text-transform: uppercase;
-  text-align: center;
-
+  opacity: 0; /* Animacijai 05: keyframe A, tekstas nematomas */
+  transition: opacity 80ms ease-out; /* Animacijai 06: perejimas opacity, delajus kai atidarai hamburgeri "opacity 250ms ease-in-out 250ms". Animacijai 08 pakeiti parametrai i "opacity 150ms ease-in-out" */
 }
 
-.item1 {
-  grid-area: item1;
-  grid-column: auto;
-  grid-row: 1/2;
-  /*visual style*/
-  background-image: url("img/img1.jpg");
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-  /*background: SteelBlue;*/
-  height: 800px;
-  margin: 10px 5px;
-
+.nav a:hover {
+  color: black;
 }
 
-.item2 {
-  grid-area: item2;
-  grid-column: auto;
-  grid-row: 2/3;
-  /*visual style*/
-  background: Tomato;
-  background-image: url("img/img2.jpg");
-  background-position: center;
-  background-size: cover;
-  border-radius: 20px;
-
-  height: 800px;
-  margin: 10px 5px;
+.nav-toggle:checked ~ nav { /* It's looking for any preceeding sibling. It doesn't have to be ammediatly after */
+  /*display: block; delete comm leter */
+  transform: scale(1,1); /* Animacijai 02: isplecia horizontaleje */
 }
 
-.item3 {
-  grid-area: item3;
-  grid-column: auto;
-  grid-row: 3/4;
-  /*visual style*/
-  background: Moccasin;
-  background-image: url("img/img3.jpg");
-  background-position: center;
-  background-size: cover;
-  border-radius: 20px;
-
-  height: 800px;
-  margin: 10px 5px;
+.nav-toggle:checked ~ nav a {
+  opacity: 1; /* Animacijai 05: keyframe B, tekstas matoams */
+  transition: opacity 250ms ease-in-out 250ms; /* Animacijai 07 nukopijuota is 07 "opacity 250ms ease-in-out 250ms" */
 }
-
-.item-sub {
-  margin: 0px;
-  padding: 1px 0px 200px 0px;
-  background: linear-gradient( rgba(255,255,255, .6), rgba(255,255,255, .8), rgba(255,255,255, .4), rgba(255,255,255,0));
-  border-radius: 20px 20px 0 0;
-}
-
-.img1 {
-  width: 2fr;
-  align-self: center;
-}
-
-.img2 {
-  width: 2fr;
-  align-self: center;
-}
-
-.img3 {
-  width: 2fr;
-  align-self: center;
-}
-
-/* Ekranas horizontaleje 600-900px */
 
 @media screen and (min-width: 600px) {
-  .item1 {
-    grid-column: 1/ span 2;
-    grid-row: 1/2;
+  .nav-toggle-label {
+    display: none; /* paslepia hamburgeri placiam ekrane */
   }
-  .item2 {
-    grid-column: 3/5;
-    grid-row: 1/2;
-  }
-  .item3 {
-    grid-column: 2/4;
-    grid-row: 2/3;
-  }
-}
 
-/* Ekranas horizontaleje 900-1600px */
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  }
 
-@media screen and (min-width: 900px) {
-  .item1 {
-    grid-column: 1/3;
-    grid-row: auto;
+  .logo {
+    grid-column: 2 / span 1;
   }
-  .item2 {
-    grid-column: 3/5;
-    grid-row: auto;
+
+  .nav {
+    all: unset; /* nuima visus stilius kas buvo daryta anksciau */
+    grid-column: 3 / span 1;
+    display: flex; /* padaro platsni nav bara kur yra tekstas */
+    align-items: center;
   }
-  .item3 {
-    grid-column: 5/7;
-    grid-row: auto;
+
+  .nav ul {
+    display: flex;
   }
+
+  .nav li {
+    margin-left: 3em; //
+    margin-bottom: 0;
+  }
+
+  .nav a {
+    opacity: 1;
+  }
+
+
 }

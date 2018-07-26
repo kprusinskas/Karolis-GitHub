@@ -1,73 +1,35 @@
 <!DOCTYPE html>
-<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 
-<html lang="en">
 <head>
-
+  <html lang="lt">
   <meta charset="utf-8">
-  <title>804 Trakų Kuopa</title>
   <link rel="stylesheet" href="style.css">
+  <title>804 Trakų Kuopa</title>
 </head>
 
 <body class="body">
-  <div class="container">
+  <div class="content">
+
+    <!-- Headeris -->
     <header class="header">
-      <a href="#"><img class="Logo" src="img/Logo.png" alt="Logo"></a>
- </header>
+      <h1 class="logo">Logo</h1>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle"> <!-- Kepant hamburgeri tik su CSS, svarbu checkbox tureti pries nav. Input has to have id and class, id is so input and and label can work together -->
 
-<nav class="navbar">Navbar
-      <ul>
-        <li class="nav-li">
-          <a class="prisijunk" href="#">Prisijunk</a>
-        </li>
-        <li class="nav-li">
-          <a class="2-parama" href="#">2% Parama</a>
-        </li>
-        <li class="nav-li">
-          <a class="komanda" href="#">Komanda</a>
-        </li>
-        <li class="nav-li">
-          <a class="istorija" href="#">Istorija</a>
-        </li>
-        <li class="nav-li">
-          <a class="kontaktai" href="#">Kontaktai</a>
-        </li>
-      </ul>
-    </nav>
+      <!-- Navigacija -->
+      <nav class="nav">
+        <ul>
+          <li class="nav-li"><a href="#">Prisijunk!</a></li>
+          <li class="nav-li"><a href="#">2% Parama</a></li>
+          <li class="nav-li"><a href="#">Tapk Kariu Vienai Dienai</a></li>
+          <li class="nav-li"><a href="#">Istorija</a></li>
+          <li class="nav-li"><a href="#">Kontaktai</a></li>
+        </ul>
+      </nav>
+      <label for="nav-toggle" class="nav-toggle-label"> <!-- for="nav-toggle" is going to look for an id, won't see the class. -->
+        <span></span>
+      </label>
+    </header>
 
-<article class="content">
-  <h1>Test</h1>
-  <p>Test.</p>
-</article>
-
-<div class="offers">
-  <div class="item1">
-    <div class="item-sub">
-      <h1>Prisijunk!</h1>
-      <p>Patirk kas yra tikras komandinis darbas.</p>
     </div>
   </div>
-  <div class="item2">
-    <div class="item-sub">
-      <h1>2% Parama</h1>
-      <p>Skirkite 2% paramą medicinos ir ryšio priemonėms įsigyti.</p>
-    </div>
-  </div>
-  <div class="item3">
-    <div class="item-sub">
-      <h1>Tapk savanoriu vienai dienai</h1>
-      <p>Patirk kas yra būti KASP savanoriu.</p>
-    </div>
-  </div>
-</div>
-
-<aside class="sidebar">
-  <h1>sidebar</h1>
-  <p>Test.</p>
-</aside>
-<footer class="footer">
-  <h1>footer</h1>
-  <p>Test.</p>
-</footer>
-</div>
 </body>
