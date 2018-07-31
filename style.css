@@ -184,6 +184,12 @@
   padding: 10px 20px;
 }
 
+.item4 {
+  background-image: url(img/img1.JPG);
+  background-position: center;
+  background-size: cover;
+}
+
 /* footerio zona*/
 .footer-nav {
   background: var(--dark);
