@@ -18,10 +18,11 @@
 .body{
   background-color: pink;
   margin: 0;
+  padding: 0;
 }
 
 .content {
-  height: 100vh;
+  height: auto;
   /*background-image: url(//unsplash.it/1000/1000);*/
   background-color: var(--green-2);
   background-blend-mode: multiply;
@@ -136,8 +137,8 @@
 .article {
   background-color: var(--green-1);
   display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
-  grid-template-rows: 5rem 100px 1rem auto 1fr;
+  grid-template-columns: 1rem auto 1rem;
+  grid-template-rows: 5rem 100px 1rem auto;
 }
 
 .title {
@@ -151,17 +152,36 @@
   grid-column: 2 / span 1;
   grid-row: 4 / span 1;
   display: grid;
-  grid-template-columns: minmax(200px, 4fr)
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 1rem;
 
 }
 
-.items div {
-  background-color: var(--green-2);
-  width: auto;
+.poloroid {
+  width: 100%;
+  background-color: var(--dark);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+
+
+
 }
 
-.items-li-1 {
+.poloroid-img {
   background-image: url(img/img1.JPG);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  padding: 1rem 1rem;
+
+
+
+}
+
+.polaroid-text {
+  color: var(--green-2);
+  text-align: center;
+  padding: 10px 20px;
 }
 
 /* footerio zona*/
