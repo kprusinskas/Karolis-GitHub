@@ -16,14 +16,14 @@
 }
 
 .body{
-  background-color: var(--green-2);
+  background-color: pink;
   margin: 0;
 }
 
 .content {
-  height: 200vh;
-  background-image: url(//unsplash.it/1000/1000);
-  background-color: #333;
+  height: 100vh;
+  /*background-image: url(//unsplash.it/1000/1000);*/
+  background-color: var(--green-2);
   background-blend-mode: multiply;
   background-size: cover;
   display: grid;
@@ -38,6 +38,8 @@
   position: fixed;
   z-index: 10; /* iskelia sluoksni i prieki */
   width: 100%;
+  height: 60px;
+
 }
 
 .nav-toggle {
@@ -91,6 +93,7 @@
   transform: scale(1, 0); /* Animacijai 01: suspaudzia horizontaleje */
   transform-origin: top; /* Animacijai 04: Padaro, kad prasidetu nuo virsaus */
   transition: transform 400ms ease-in-out; /* Animacijai 03: transition */
+
 }
 
 .nav ul {
@@ -127,6 +130,58 @@
   transition: opacity 250ms ease-in-out 250ms; /* Animacijai 07 nukopijuota is 07 "opacity 250ms ease-in-out 250ms" */
 }
 
+
+/* Cia prasideda staripsnis */
+
+.article {
+  background-color: var(--green-1);
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: 5rem 100px 1rem auto 1fr;
+}
+
+.title {
+  background-color: var(--green-2);
+  grid-column: 2 / span 2;
+  grid-row: 2 / span 1;
+}
+
+.items {
+  background-color: var(--green-2);
+  grid-column: 2 / span 1;
+  grid-row: 4 / span 1;
+  display: grid;
+  grid-template-columns: minmax(200px, 4fr)
+
+}
+
+.items div {
+  background-color: var(--green-2);
+  width: auto;
+}
+
+.items-li-1 {
+  background-image: url(/img/img1.jpg);
+}
+
+/* footerio zona*/
+.footer-nav {
+  background: var(--dark);
+}
+
+.footer-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-nav a {
+  color: var(--brown-3);
+  text-decoration: none; /* nuo hyperlinko nuima underline */
+  font-size: .8rem;
+  /*text-transform: lowercase;*/
+}
+
 @media screen and (min-width: 600px) {
   .nav-toggle-label {
     display: none; /* paslepia hamburgeri placiam ekrane */
@@ -146,16 +201,20 @@
     grid-column: 3 / span 1;
     display: flex; /* padaro platsni nav bara kur yra tekstas */
     align-items: center;
+
   }
 
   .nav ul {
     display: flex;
+    justify-content: center;
+
   }
 
   .nav li {
-    margin-left: 3em; //
+    margin-left: 3em;
     margin-bottom: 0;
-  }
+    border: 1px solid yellow;
+}
 
   .nav a {
     opacity: 1;
