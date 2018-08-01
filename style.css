@@ -283,7 +283,7 @@
 /**/
 /**/
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 360px) {
   .nav-toggle-label {
     display: none; /* paslepia hamburgeri placiam ekrane */
   }
