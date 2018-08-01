@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
+
 /*  Spalvos  */
 
 :root {
@@ -8,6 +10,10 @@
     --brown-2: #8d8075;
     --brown-3: #dbcdc3;
     --dark: #1b1a1a;
+    --gold: #ffca08;
+    --purple: #ac1a40;
+
+
 }
 
 /*box sizing*/
@@ -16,31 +22,34 @@
 }
 
 .body{
-  background-color: pink;
+  background-color: var(--green-2);
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
-}
-
-.content {
-  height: auto;
-  /*background-image: url(//unsplash.it/1000/1000);*/
-  background-color: var(--green-2);
-  background-blend-mode: multiply;
-  background-size: cover;
   display: grid;
+  grid-template-rows: 5rem 1fr auto;
+  grid-template-columns: 2em 1fr 2em;
+  grid-template-areas:
+  "header header header"
+  ". content ."
+  "footer footer footer";
 }
 
-/* Headerio Navigacijos Stilius */
+/**/
+/**/
+/* Header */
+/**/
+/**/
 
 .header {
+  grid-area: header;
   background: var(--brown-1);
   color: var(--brown-3);
   text-align: center; /* centruoja teksta horizontaleje */
-  position: fixed;
-  z-index: 10; /* iskelia sluoksni i prieki */
+  position: fixed; /* galima daryti "position: fixed;", kad liktu vienoje vietoje */
+  z-index: 10;
   width: 100%;
-  height: 60px;
-
+  height: 5rem;
 }
 
 .nav-toggle {
@@ -51,7 +60,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  margin-left: 1em;
+  margin-left: 2em;
   /* border: 1px solid red; */
   display: flex; /* sukuria flex */
   height: 100%;
@@ -76,11 +85,11 @@
 }
 
 .nav-toggle-label span::before {
-  bottom: 7px;
+  bottom: 8px;
 }
 
 .nav-toggle-label span::after {
-  top: 7px;
+  top: 8px;
 }
 
 .nav {
@@ -101,17 +110,18 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  margin-top: 2em;
 }
 
 .nav li {
-  margin-bottom: 1em;
-  margin-left: 1em;
+  margin-bottom: 3em;
+  margin-left: 3em;
 }
 
 .nav a {
   color: white;
   text-decoration: none; /* nuo hyperlinko nuima underline */
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   opacity: 0; /* Animacijai 05: keyframe A, tekstas nematomas */
   transition: opacity 80ms ease-out; /* Animacijai 06: perejimas opacity, delajus kai atidarai hamburgeri "opacity 250ms ease-in-out 250ms". Animacijai 08 pakeiti parametrai i "opacity 150ms ease-in-out" */
@@ -132,65 +142,125 @@
 }
 
 
-/* Cia prasideda staripsnis */
+/**/
+/**/
+/* Content */
+/**/
+/**/
 
-.article {
-  background-color: var(--green-1);
+.content {
+  width: 100%;
+  grid-area: content;
+  background-color: var(--green-3);
   display: grid;
-  grid-template-columns: 1rem auto 1rem;
-  grid-template-rows: 5rem 100px 1rem auto;
+  grid-template-rows: repeat(3, 5rem) auto;
+  grid-template-columns: 2rem repeat(6, 1fr) 2rem;
+
 }
 
 .title {
   background-color: var(--green-2);
-  grid-column: 2 / span 2;
+  grid-column: 3 / span 6;
   grid-row: 2 / span 1;
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+  grid-template-areas:
+  "p"
+  "h1";
+
+  padding: 10px;
+  margin: 0px;
+
+}
+
+.title h1 {
+  grid-area: h1;
+  text-transform: uppercase;
+
+  font-size: 3rem;
+  padding: 0px;
+  margin: 0px;
+
+
+}
+
+.title p {
+  grid-area: p;
+  text-transform: uppercase;
+  color: var(--green-3);
+  padding: 0px;
+  margin: 0px;
+
 }
 
 .items {
-  background-color: var(--green-2);
-  grid-column: 2 / span 1;
+  background-color: var(--green-3);
+  grid-column: 2 / span 6;
   grid-row: 4 / span 1;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
-  padding: 1rem;
-
 }
 
 .poloroid {
-  width: 100%;
   background-color: var(--dark);
+  height: 42em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-bottom: 25px;
-
-
+  margin: 0 0em 3em 0em;
+  /*border: 1px solid red;*/
+  display: grid;
+  grid-template-rows: 6fr .5fr;
 
 }
 
 .poloroid-img {
-  background-image: url(img/img1.JPG);
-  background-position: center;
-  background-size: cover;
-  width: 100%;
-  padding: 1rem 1rem;
-
-
+  /*border: 1px solid green;*/
 
 }
-
 .polaroid-text {
   color: var(--green-2);
+  font-size: 2rem;
   text-align: center;
-  padding: 10px 20px;
+  padding: .3rem .8rem;
+  /*border: 1px solid yellow;*/
 }
 
-.item4 {
+#img1 {
   background-image: url(img/img1.JPG);
   background-position: center;
   background-size: cover;
+  display: block;
+  margin: 1rem 1rem 0 1rem;
 }
 
-/* footerio zona*/
+#img2 {
+  background-image: url(img/img2.JPG);
+  background-position: center;
+  background-size: cover;
+  display: block;
+  margin: 1rem 1rem 0 1rem;
+}
+
+#img3 {
+  background-image: url(img/img3.JPG);
+  background-position: center;
+  background-size: cover;
+  display: block;
+  margin: 1rem 1rem 0 1rem;
+}
+
+
+
+
+/**/
+/**/
+/* Footer */
+/**/
+/**/
+
+.footer {
+    grid-area: footer;
+}
+
 .footer-nav {
   background: var(--dark);
 }
@@ -205,8 +275,13 @@
   color: var(--brown-3);
   text-decoration: none; /* nuo hyperlinko nuima underline */
   font-size: .8rem;
-  /*text-transform: lowercase;*/
 }
+
+/**/
+/**/
+/* media querese */
+/**/
+/**/
 
 @media screen and (min-width: 600px) {
   .nav-toggle-label {
