@@ -28,7 +28,7 @@
   padding: 0;
   display: grid;
   grid-template-rows: 5rem 1fr auto;
-  grid-template-columns: 2em 1fr 2em;
+  grid-template-columns: .5em 1fr .5em;
   grid-template-areas:
   "header header header"
   ". content ."
@@ -154,7 +154,7 @@
   background-color: var(--green-3);
   display: grid;
   grid-template-rows: repeat(3, 5rem) auto;
-  grid-template-columns: 2rem repeat(6, 1fr) 2rem;
+  grid-template-columns: 1rem repeat(6, 1fr) 1rem;
 
 }
 
@@ -203,9 +203,9 @@
 
 .poloroid {
   background-color: var(--dark);
-  height: 42em;
+  height: 24rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin: 0 0em 3em 0em;
+  margin: 0 0 1rem 0;
   /*border: 1px solid red;*/
   display: grid;
   grid-template-rows: 6fr .5fr;
@@ -214,6 +214,10 @@
 
 .poloroid-img {
   /*border: 1px solid green;*/
+  background-position: center;
+  background-size: cover;
+  display: block;
+  margin: .5rem .5rem 0 .5rem;
 
 }
 .polaroid-text {
@@ -226,26 +230,16 @@
 
 #img1 {
   background-image: url(img/img1.JPG);
-  background-position: center;
-  background-size: cover;
-  display: block;
-  margin: 1rem 1rem 0 1rem;
+  background-color: red;
+  mix-blend-mode:screen;
 }
 
 #img2 {
   background-image: url(img/img2.JPG);
-  background-position: center;
-  background-size: cover;
-  display: block;
-  margin: 1rem 1rem 0 1rem;
 }
 
 #img3 {
   background-image: url(img/img3.JPG);
-  background-position: center;
-  background-size: cover;
-  display: block;
-  margin: 1rem 1rem 0 1rem;
 }
 
 
@@ -257,24 +251,32 @@
 /**/
 /**/
 
-.footer {
-    grid-area: footer;
-}
-
 .footer-nav {
-  background: var(--dark);
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: auto auto;
+    background: var(--dark);
 }
 
 .footer-nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  border: 2px solid red;
 }
 
 .footer-nav a {
   color: var(--brown-3);
   text-decoration: none; /* nuo hyperlinko nuima underline */
   font-size: .8rem;
+  border: 2px solid yellow;
+}
+
+.footer-contacts {
+  grid-column: 2 / span 1;
+  display: flex;
+  justify-content: flex-end;
+  border: 2px solid pink;
 }
 
 /**/
@@ -308,6 +310,7 @@
   .nav ul {
     display: flex;
     justify-content: center;
+    border: 1px solid red;
 
   }
 
