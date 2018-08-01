@@ -230,8 +230,7 @@
 
 #img1 {
   background-image: url(img/img1.JPG);
-  background-color: red;
-  mix-blend-mode:screen;
+
 }
 
 #img2 {
@@ -240,6 +239,24 @@
 
 #img3 {
   background-image: url(img/img3.JPG);
+}
+
+#img1-overlay {
+  background-color: var(--gold);
+  height: 100%;
+  mix-blend-mode: color;
+}
+
+#img2-overlay {
+  background-color: var(--green-3);
+  height: 100%;
+  mix-blend-mode: color;
+}
+
+#img3-overlay {
+  background-color: var(--purple);
+  height: 100%;
+  mix-blend-mode: color;
 }
 
 
